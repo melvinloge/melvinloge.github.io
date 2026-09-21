@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中国国产航母资讯平台，提供山东舰、福建舰航母动态、建造历程、技术参数及海军发展史的专业解读。">
+    <meta name="keywords" content="国产航母, 山东舰, 福建舰, 航母发展, 舰载机, 中国海军">
+    <title>国产航母-中国海军装备发展与航母资讯平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #0056b3;
+            --accent-cyan: #00bcd4;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-cyan);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-cyan);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-cyan);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-date {
+            flex: 0 0 150px;
+            font-weight: bold;
+            color: var(--secondary-blue);
+            font-size: 1.1rem;
+            padding-top: 5px;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent-cyan);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-blue);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Fleet Showcase */
+        .fleet-section {
+            padding: 80px 0;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .ship-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ship-img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ship-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .ship-card:hover .ship-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .ship-info {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ship-badge {
+            display: inline-block;
+            background-color: var(--accent-cyan);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .ship-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .ship-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .specs-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .spec-item {
+            font-size: 0.85rem;
+        }
+
+        .spec-label {
+            color: var(--text-light);
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding-top: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-container nav.active {
+                display: flex;
+            }
+
+            .nav-container nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-top: 30px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .timeline-item, .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 20h20"></path>
+                    <path d="M5 20v-2a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2"></path>
+                    <path d="M10 17V7a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v10"></path>
+                    <path d="M4 10h16"></path>
+                </svg>
+                国产航母<span>资讯</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#history">发展历程</a></li>
+                    <li><a href="#fleet">现役舰艇</a></li>
+                    <li><a href="#tech">技术解析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>深蓝利剑，守护和平</h1>
+                <p>全面解析中国国产航母的发展历程、技术参数与战略意义。从辽宁舰到福建舰，见证中国海军走向深蓝的坚实步伐。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>在建/服役航母</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>003</h3>
+                        <p>最新平直甲板型号</p>
+                    </div>
+                </div>
+                <a href="#fleet" class="btn" style="background: var(--accent-cyan); color: var(--primary-blue); padding: 12px 30px; border-radius: 30px; font-weight: bold; display: inline-block;">探索舰队</a>
+            </div>
+            <div class="hero-image">
+                <!-- Using a generic ocean/military abstract image as placeholder -->
+                <img src="https://picsum.photos/seed/navyship/600/400" alt="中国海军航母编队" width="600" height="400">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Intro -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">航母战略意义</h2>
+            <p class="section-subtitle">了解为何国产航母是国家综合国力的象征</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚓</div>
+                    <h3>远洋护卫</h3>
+                    <p>航母编队具备强大的远程打击和区域防空能力，是维护国家海外利益和海上通道安全的关键力量。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛩️</div>
+                    <h3>舰载机摇篮</h3>
+                    <p>航母是舰载机起降的训练基地，推动了航空发动机、雷达、电子对抗等尖端技术的协同发展。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>威慑平衡</h3>
+                    <p>拥有航母能够有效维护地区战略平衡，提升国防威慑力，保障国家主权和领土完整。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="history" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">发展历程</h2>
+            <p class="section-subtitle">从引进改造到自主设计，中国航母事业的跨越</p>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">2012年</div>
+                    <div class="timeline-content">
+                        <h3>辽宁舰服役</h3>
+                        <p>中国首艘航空母舰“辽宁舰”正式交付海军，标志着中国进入航母时代，为后续训练和科研奠定基础。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019年</div>
+                    <div class="timeline-content">
+                        <h3>山东舰下水</h3>
+                        <p>中国第二艘航空母舰“山东舰”正式下水，这是中国完全自主设计、建造的首艘航母，实现了从“跟跑”到“并跑”。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022年</div>
+                    <div class="timeline-content">
+                        <h3>福建舰首航</h3>
+                        <p>中国第三艘航空母舰“福建舰”下水，采用平直通长飞行甲板和电磁弹射技术，技术水平达到世界先进。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Showcase -->
+    <section id="fleet" class="fleet-section">
+        <div class="container">
+            <h2 class="section-title">现役与在建航母</h2>
+            <p class="section-subtitle">中国海军航母编队概览</p>
+            <div class="fleet-grid">
+                <!-- Card 1 -->
+                <article class="ship-card">
+                    <div class="ship-img-wrapper">
+                        <img src="https://picsum.photos/seed/shandong/400/250" alt="山东舰" loading="lazy">
+                    </div>
+                    <div class="ship-info">
+                        <span class="ship-badge">首艘国产航母</span>
+                        <h3>山东舰 (16)</h3>
+                        <p>基于辽宁舰改进设计，采用滑跃起飞方式，主要承担日常战备训练和作战任务。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">满载排水量</span><br><span class="spec-value">约6万吨</span></div>
+                            <div class="spec-item"><span class="spec-label">舰载机数量</span><br><span class="spec-value">约36架</span></div>
+                            <div class="spec-item"><span class="spec-label">动力系统</span><br><span class="spec-value">常规动力</span></div>
+                            <div class="spec-item"><span class="spec-label">起飞方式</span><br><span class="spec-value">滑跃起飞</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="ship-card">
+                    <div class="ship-img-wrapper">
+                        <img src="https://picsum.photos/seed/fujian/400/250" alt="福建舰" loading="lazy">
+                    </div>
+                    <div class="ship-info">
+                        <span class="ship-badge">最新型航母</span>
+                        <h3>福建舰 (18)</h3>
+                        <p>中国首艘平直甲板、弹射型航空母舰，搭载歼-15T等先进战机，具备强大的远程打击能力。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">满载排水量</span><br><span class="spec-value">约8万余吨</span></div>
+                            <div class="spec-item"><span class="spec-label">舰载机数量</span><br><span class="spec-value">约50-70架</span></div>
+                            <div class="spec-item"><span class="spec-label">动力系统</span><br><span class="spec-value">常规动力</span></div>
+                            <div class="spec-item"><span class="spec-label">起飞方式</span><br><span class="spec-value">电磁弹射</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="ship-card">
+                    <div class="ship-img-wrapper">
+                        <img src="https://picsum.photos/seed/liaoning/400/250" alt="辽宁舰" loading="lazy">
+                    </div>
+                    <div class="ship-info">
+                        <span class="ship-badge">科研训练舰</span>
+                        <h3>辽宁舰 (16)</h3>
+                        <p>中国第一艘航空母舰，由前苏联瓦良格号改装而成，承担科研试验和训练任务。</p>
+                        <div class="specs-list">
+                            <div class="spec-item"><span class="spec-label">满载排水量</span><br><span class="spec-value">约6万吨</span></div>
+                            <div class="spec-item"><span class="spec-label">舰载机数量</span><br><span class="spec-value">约24架</span></div>
+                            <div class="spec-item"><span class="spec-label">动力系统</span><br><span class="spec-value">常规动力</span></div>
+                            <div class="spec-item"><span class="spec-label">起飞方式</span><br><span class="spec-value">滑跃起飞</span></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            <p class="section-subtitle">关于国产航母的权威解读</p>
+            <div class="faq-container">
+                <details>
+                    <summary>中国目前有几艘航母？</summary>
+                    <div class="faq-content">
+                        <p>截至目前，中国海军现役航母包括“辽宁舰”、“山东舰”和“福建舰”。其中，“辽宁舰”和“山东舰”已形成战斗力，“福建舰”正处于海试阶段，预计将很快正式服役。</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>福建舰相比前两代有什么突破？</summary>
+                    <div class="faq-content">
+                        <p>福建舰最大的突破在于采用了平直通长飞行甲板和电磁弹射技术，而非滑跃起飞。这使得舰载机可以满油满弹起飞，大幅提升了作战效率，并能够起降固定翼预警机。</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>国产航母的动力来源是什么？</summary>
+                    <div class="faq-content">
+                        <p>目前中国现役的“辽宁舰”、“山东舰”和“福建舰”均采用常规动力系统（燃油锅炉），而非核动力。核动力航母是未来发展的方向之一。</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>为什么需要航母？</summary>
+                    <div class="faq-content">
+                        <p>航母是现代海军的核心力量，能够搭载舰载机群，具备远程打击、防空反潜、海上救援等多种作战能力，对于维护国家海洋权益和海外利益具有不可替代的战略作用。</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>国产航母资讯</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        致力于为军事爱好者提供准确、客观的国产航母建设信息与科普内容。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#history">发展历程</a></li>
+                        <li><a href="#fleet">现役舰艇</a></li>
+                        <li><a href="#tech">技术参数</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">中国海军官网</a></li>
+                        <li><a href="#">国防部发布</a></li>
+                        <li><a href="#">中国军网</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 国产航母资讯平台. All Rights Reserved. 本站内容仅供科普学习参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const nav = document.getElementById('mainNav');
+                    nav.classList.remove('active');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
