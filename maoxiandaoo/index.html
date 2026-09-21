@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛OL - 经典横版卷轴MMORPG冒险游戏攻略与社区</title>
+    <meta name="description" content="冒险岛OL官方及社区综合指南，提供最新游戏资讯、职业加点攻略、副本通关技巧、装备养成指南及玩家交流平台。探索童话世界的冒险之旅。">
+    <meta name="keywords" content="冒险岛OL, 冒险岛, 网页版冒险岛, 冒险岛攻略, 冒险岛职业, 冒险岛副本, 冒险岛手游">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ffcc00;
+            --primary-hover: #e6b800;
+            --secondary-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 15px;
+            color: var(--secondary-color);
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 5px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 204, 0, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.5)), url('https://picsum.photos/seed/maplestory_hero/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Game Features Grid */
+        .features {
+            padding: 2rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Classes Section */
+        .classes-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .class-card {
+            background: var(--bg-body);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .class-card:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.02);
+        }
+
+        .class-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .class-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .class-info h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .class-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Guide & News Layout */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 4rem 0;
+        }
+
+        .guide-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .guide-item {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .guide-body {
+            padding: 20px;
+        }
+
+        .guide-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .guide-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .guide-body p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .sidebar h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .sidebar-list a {
+            display: block;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .sidebar-list span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--bg-body);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>冒险岛</span>OL 指南
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#classes">职业介绍</a></li>
+                    <li><a href="#guides">游戏攻略</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>重返童话世界</h1>
+            <p>经典的横版卷轴MMORPG体验，探索枫之岛的冒险，挑战强大的魔王，结识志同道合的伙伴。</p>
+            <div class="hero-buttons">
+                <a href="#guides" class="btn btn-primary">开始冒险</a>
+                <a href="#classes" class="btn btn-outline" style="color:white; border-color:white;">选择职业</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">⚔️</span>
+                    <h3>经典横版战斗</h3>
+                    <p>独特的横版卷轴视角，配合连击系统与技能释放，带来流畅爽快的打击体验。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🗺️</span>
+                    <h3>广阔探索世界</h3>
+                    <p>从童话森林到神秘的地下城，从热闹的城镇到危险的战场，自由探索每一个角落。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🤝</span>
+                    <h3>社交与组队</h3>
+                    <p>组队刷本、公会战、结婚系统，与成千上万的冒险者共同成长，建立深厚羁绊。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🎒</span>
+                    <h3>多样养成系统</h3>
+                    <p>丰富的装备打造、宠物养成、称号收集，打造属于你独一无二的冒险者形象。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes-section">
+        <div class="container">
+            <h2 class="section-title">热门职业推荐</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/archer/400/300.jpg" alt="弓箭手" class="class-img">
+                    <div class="class-info">
+                        <h4>弓箭手</h4>
+                        <p>远程物理输出</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/warrior/400/300.jpg" alt="战士" class="class-img">
+                    <div class="class-info">
+                        <h4>战士</h4>
+                        <p>高防御近战坦克</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/mage/400/300.jpg" alt="法师" class="class-img">
+                    <div class="class-info">
+                        <h4>法师</h4>
+                        <p>强力元素魔法</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/thief/400/300.jpg" alt="盗贼" class="class-img">
+                    <div class="class-info">
+                        <h4>盗贼</h4>
+                        <p>高爆发隐身刺客</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/pirate/400/300.jpg" alt="海盗" class="class-img">
+                    <div class="class-info">
+                        <h4>海盗</h4>
+                        <p>枪械与近战结合</p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <img src="https://picsum.photos/seed/hero/400/300.jpg" alt="英雄" class="class-img">
+                    <div class="class-info">
+                        <h4>英雄</h4>
+                        <p>最终转职职业</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Guides & News -->
+    <main class="container">
+        <div class="guide-layout">
+            <!-- Left Column: Guides -->
+            <section id="guides" class="guide-content">
+                <h2>新手入门与进阶攻略</h2>
+                
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/newbie_guide/800/400.jpg" alt="新手任务流程">
+                    <div class="guide-body">
+                        <div class="guide-meta">
+                            <span>新手指南</span>
+                            <span>2023-10-24</span>
+                        </div>
+                        <h3>冒险岛OL新手开局全流程详解</h3>
+                        <p>从创建角色到进入埃德尔斯坦，本文详细梳理了新手阶段必须完成的任务、装备获取途径以及技能加点的基本思路，助你快速上手游戏。</p>
+                    </div>
+                </article>
+
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/dungeon/800/400.jpg" alt="副本攻略">
+                    <div class="guide-body">
+                        <div class="guide-meta">
+                            <span>副本攻略</span>
+                            <span>2023-10-20</span>
+                        </div>
+                        <h3>梦幻列车与神殿副本通关技巧</h3>
+                        <p>面对高难度的团队副本，职业搭配与站位至关重要。本文分析了梦幻列车的BOSS机制以及神殿副本的掉落奖励，提供最优解法。</p>
+                    </div>
+                </article>
+
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/money/800/400.jpg" alt="赚钱攻略">
+                    <div class="guide-body">
+                        <div class="guide-meta">
+                            <span>经济系统</span>
+                            <span>2023-10-15</span>
+                        </div>
+                        <h3>高效赚钱指南：从零开始积累金币</h3>
+                        <p>如何在不投入过多时间的情况下快速积累游戏币？本文介绍了日常任务、副本掉落以及市场交易的小技巧，让你的冒险之旅经济无忧。</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <h3>热门榜单</h3>
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#">2023年最强职业排行</a>
+                        <span>阅读量: 15k</span>
+                    </li>
+                    <li>
+                        <a href="#">最新版本平衡性调整说明</a>
+                        <span>阅读量: 12k</span>
+                    </li>
+                    <li>
+                        <a href="#">红名字BOSS刷新时间表</a>
+                        <span>阅读量: 9k</span>
+                    </li>
+                    <li>
+                        <a href="#">全服热门交易物品推荐</a>
+                        <span>阅读量: 8k</span>
+                    </li>
+                    <li>
+                        <a href="#">宠物技能书获取途径</a>
+                        <span>阅读量: 7k</span>
+                    </li>
+                </ul>
+
+                <div style="margin-top: 30px; background: var(--primary-color); padding: 20px; border-radius: var(--border-radius); text-align: center; color: var(--secondary-color);">
+                    <h4 style="margin-bottom: 10px;">加入社区</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 15px;">获取一手攻略与组队信息</p>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">立即加入</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container faq-container">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <details>
+                <summary>冒险岛OL支持哪些平台？</summary>
+                <div class="faq-content">
+                    冒险岛OL目前主要支持PC端客户端以及部分移动端平台。请确保您的设备满足官方推荐的配置要求以保证游戏流畅运行。
+                </div>
+            </details>
+
+            <details>
+                <summary>新手如何快速升级？</summary>
+                <div class="faq-content">
+                    新手阶段跟随主线任务升级最快，完成后可参与双倍经验活动或刷取经验药水。达到一定等级后，组队刷副本是快速升级的有效途径。
+                </div>
+            </details>
+
+            <details>
+                <summary>游戏内如何进行交易？</summary>
+                <div class="faq-content">
+                    在拥有一定等级后，您可以在游戏内的交易市场发布或购买物品。请注意辨别虚假交易，避免遭受损失。
+                </div>
+            </details>
+
+            <details>
+                <summary>职业转职需要满足什么条件？</summary>
+                <div class="faq-content">
+                    通常需要角色达到指定等级，并完成特定的转职任务线。部分特殊转职可能需要满足特定的前置条件，如完成隐藏任务或拥有特定道具。
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <span>冒险岛</span>OL 指南
+                    </div>
+                    <p style="color: #ccc; font-size: 0.9rem;">
+                        本站为玩家社区整理的资源站点，致力于提供最全面的游戏攻略与资讯。所有游戏版权归官方所有。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">注册账号</a></li>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">客服中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>攻略分类</h4>
+                    <ul>
+                        <li><a href="#">职业加点</a></li>
+                        <li><a href="#">副本通关</a></li>
+                        <li><a href="#">装备打造</a></li>
+                        <li><a href="#">宠物养成</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">官方微信公众号</a></li>
+                        <li><a href="#">Discord社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 冒险岛OL指南站. All Rights Reserved. 此页面仅为设计展示，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                      </html>
