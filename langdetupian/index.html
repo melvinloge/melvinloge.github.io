@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狼的图片 - 高清狼族影像图库与自然摄影作品</title>
+    <meta name="description" content="本站提供海量狼的图片，包含野外狼群、雪地狼、狼群狩猎、狼的眼神特写等高清自然摄影作品，适合壁纸下载、设计素材及科普研究使用。">
+    <meta name="keywords" content="狼的图片,狼,狼族图片,高清狼图,狼摄影,自然摄影,狼群">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-bar input {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-bar input:focus {
+            width: 250px;
+            border-color: var(--accent-color);
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/wolfhero/1920/600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--container-width);
+            margin: 2rem auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 0.8rem;
+        }
+
+        /* Categories */
+        .categories-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .cat-tag {
+            padding: 0.5rem 1.2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cat-tag:hover, .cat-tag.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .info-section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>狼图库</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">高清壁纸</a></li>
+                    <li><a href="#">野外摄影</a></li>
+                    <li><a href="#">关于狼群</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索狼的图片...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索狼的图片世界</h1>
+            <p>汇集全球顶级自然摄影师拍摄的狼族高清影像，感受大自然的野性与力量。</p>
+            <a href="#gallery" class="btn">浏览图片</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Filter Categories -->
+        <div class="section-header">
+            <h2 class="section-title">分类浏览</h2>
+        </div>
+        <div class="categories-container">
+            <span class="cat-tag active">全部</span>
+            <span class="cat-tag">雪地狼</span>
+            <span class="cat-tag">狼群狩猎</span>
+            <span class="cat-tag">狼眼神特写</span>
+            <span class="cat-tag">幼狼</span>
+            <span class="cat-tag">灰狼</span>
+            <span class="cat-tag">红狼</span>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="section-header">
+            <h2 class="section-title">精选狼的图片</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf1/400/300" alt="雪地中的狼" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">雪地中的孤狼</h3>
+                    <p class="card-desc">一只孤独的灰狼在白雪皑皑的森林中伫立，眼神深邃，展现着野生动物的坚韧与孤独。</p>
+                    <div class="card-meta">
+                        <span>摄影：Alex Chen</span>
+                        <span>4K 壁纸</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf2/400/300" alt="狼群特写" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">狼群凝视</h3>
+                    <p class="card-desc">狼群成员之间的眼神交流，充满了团队协作与信任，捕捉到了极其罕见的瞬间。</p>
+                    <div class="card-meta">
+                        <span>摄影：Sarah Li</span>
+                        <span>自然摄影</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf3/400/300" alt="狼的侧面剪影" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">月下剪影</h3>
+                    <p class="card-desc">背景是皎洁的月亮，狼的剪影在夜色中若隐若现，极具艺术感和神秘色彩。</p>
+                    <div class="card-meta">
+                        <span>摄影：John Doe</span>
+                        <span>艺术壁纸</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf4/400/300" alt="奔跑的狼" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">疾风追逐</h3>
+                    <p class="card-desc">高速摄影捕捉到的狼群在草原上奔跑的瞬间，肌肉线条清晰可见，充满爆发力。</p>
+                    <div class="card-meta">
+                        <span>摄影：Mike Wang</span>
+                        <span>动态壁纸</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Card 5 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf5/400/300" alt="狼的鼻子" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">敏锐的感官</h3>
+                    <p class="card-desc">特写镜头下的狼鼻，展现了它们作为顶级掠食者敏锐的嗅觉和生存本能。</p>
+                    <div class="card-meta">
+                        <span>摄影：Emily Zhang</span>
+                        <span>微距摄影</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/wolf6/400/300" alt="狼与月光" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">月夜守望</h3>
+                    <p class="card-desc">在月光照耀下的荒野，狼独自守望领地，画面静谧而庄严。</p>
+                    <div class="card-meta">
+                        <span>摄影：David Liu</span>
+                        <span>风景壁纸</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section" id="about">
+            <h2>关于狼的图片资源</h2>
+            <p>狼作为自然界中最具智慧和力量的动物之一，其形象在摄影艺术中占据着重要地位。本站提供的狼的图片不仅具有极高的审美价值，同时也具备科普教育意义。我们精选的图片涵盖了狼的多种生活状态，包括野外生存、家庭互动、捕猎瞬间以及独特的自然栖息环境。</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>1. 图片来源与版权</h3>
+                    <p>本站所有狼的图片均来自合作摄影师授权，部分图片来源于公共领域或经过CC0协议许可。用户在下载和使用这些图片时，请务必遵守相应的版权声明，不得用于商业用途或未经授权的二次分发。</p>
+                </div>
+                <div class="info-item">
+                    <h3>2. 狼的生态习性</h3>
+                    <p>狼是群居动物，具有高度的社会结构。通过高清图片，我们可以更直观地观察狼的肢体语言、群体互动以及它们适应不同环境的能力。狼的图片常被用于野生动物保护宣传，以唤起公众对濒危物种的关注。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section-header">
+            <h2 class="section-title">常见问题</h2>
+        </div>
+        <div class="info-section">
+            <details style="margin-bottom: 1rem; cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">这些狼的图片可以免费下载吗？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">大部分高清壁纸和科普图片均可免费下载用于个人壁纸设置。但特定版权图片需联系作者获取授权。</p>
+            </details>
+            <details style="margin-bottom: 1rem; cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">图片中的狼是什么品种？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">图片中主要展示的是灰狼（Canis lupus），这是世界上分布最广的狼种。部分特写镜头可能包含其他亚种或混血狼。</p>
+            </details>
+            <details style="cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">如何获取高分辨率的大图？</summary>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">点击图片卡片上的“4K 壁纸”或“高清原图”标签，即可跳转至对应的详情页下载。</p>
+            </details>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: white; justify-content: center; margin-bottom: 1rem;">
+                <span>狼图库</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">投稿指南</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p class="copyright">&copy; 2023 狼图库 - 狼的图片资源网. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
