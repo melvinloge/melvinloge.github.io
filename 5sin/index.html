@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="5sing原创音乐官方首页，提供海量原创音乐作品、翻唱歌曲、歌手社区交流及音乐创作工具。收录华语原创流行、古风、摇滚、民谣等多种风格，是音乐人展示才华与听众发现好歌的首选平台。">
+    <meta name="keywords" content="5sing原创音乐,5sing,中国原创音乐基地,原创音乐,翻唱,音乐社区,音乐下载,华语原创">
+    <title>5sing原创音乐-华语原创音乐基地与音乐人社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4d4f;
+            --primary-hover: #d9363e;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e8e8e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 24px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            bottom: 4px;
+            padding: 0 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+        }
+
+        .user-actions a {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .user-actions a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            height: 48px;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .nav-inner a {
+            padding: 0 16px;
+            font-size: 15px;
+            color: var(--text-main);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .nav-inner a:hover, .nav-inner a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-inner a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 40px 0;
+            margin-bottom: 24px;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #2d3436;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: #636e72;
+            margin-bottom: 24px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.1);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .hero-stats {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 240px 1fr 300px;
+            gap: 24px;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list span {
+            font-size: 12px;
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #999;
+        }
+
+        /* Main Content */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .music-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .music-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            border-color: var(--border-color);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+
+        .music-card:hover .play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .song-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .artist-name {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .song-stats {
+            display: flex;
+            gap: 8px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .song-stats i {
+            margin-right: 2px;
+        }
+
+        /* List Style */
+        .list-row {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: background 0.2s;
+        }
+
+        .list-row:hover {
+            background: #fafafa;
+        }
+
+        .rank-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ddd;
+            width: 30px;
+            text-align: center;
+        }
+
+        .rank-num.top-3 {
+            color: var(--primary-color);
+        }
+
+        .list-info {
+            flex: 1;
+        }
+
+        .list-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .list-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .list-action {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .action-btn:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .notice-box {
+            background: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .notice-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .notice-list li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .notice-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .ad-banner {
+            width: 100%;
+            height: 250px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 200px 1fr;
+            }
+            .sidebar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px;
+            }
+            .search-bar {
+                order: 3;
+                margin: 10px 0 0;
+                max-width: 100%;
+            }
+            .user-actions {
+                display: none;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left {
+                display: none;
+            }
+            .nav-inner {
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+            .grid-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                5sing<span>原创音乐</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索歌手、歌曲、专辑或翻唱作品...">
+                <button>搜索</button>
+            </div>
+            <div class="user-actions">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">歌手入驻</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="active">首页</a>
+            <a href="#">推荐</a>
+            <a href="#">热门翻唱</a>
+            <a href="#">原创专区</a>
+            <a href="#">古风音乐</a>
+            <a href="#">流行榜</a>
+            <a href="#">下载专区</a>
+            <a href="#">音乐人社区</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>发现华语原创音乐之美</h1>
+                <p>汇聚百万音乐人的创作灵感，无论是深情翻唱还是原创佳作，这里都有属于你的声音。立即加入5sing，开启你的音乐之旅。</p>
+                <div class="cta-group">
+                    <button class="btn btn-primary">发布作品</button>
+                    <button class="btn btn-outline">浏览榜单</button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>100W+</h3>
+                        <p>原创作品</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50W+</h3>
+                        <p>注册歌手</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10亿+</h3>
+                        <p>播放量</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>实时更新</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="category-card">
+                <div class="category-title">音乐分类</div>
+                <ul class="category-list">
+                    <li><a href="#">华语流行 <span>12w</span></a></li>
+                    <li><a href="#">网络翻唱 <span>8w</span></a></li>
+                    <li><a href="#">古风音乐 <span>6w</span></a></li>
+                    <li><a href="#">流行摇滚 <span>4w</span></a></li>
+                    <li><a href="#">R&B/节奏蓝调 <span>3w</span></a></li>
+                    <li><a href="#">民谣/独立音乐 <span>5w</span></a></li>
+                    <li><a href="#">电子舞曲 <span>2w</span></a></li>
+                    <li><a href="#">说唱/嘻哈 <span>1w</span></a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-title">热门歌手</div>
+                <ul class="category-list">
+                    <li><a href="#">许嵩 <span>1.2m</span></a></li>
+                    <li><a href="#">徐良 <span>900w</span></a></li>
+                    <li><a href="#">汪苏泷 <span>800w</span></a></li>
+                    <li><a href="#">Vae <span>700w</span></a></li>
+                    <li><a href="#">后弦 <span>500w</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="content-area">
+            <!-- New Releases -->
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title">最新发布</h2>
+                    <a href="#" class="view-all">查看更多 ></a>
+                </div>
+                <div class="grid-row">
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music1/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">岁月神偷</h3>
+                            <p class="artist-name">林俊杰翻唱</p>
+                            <div class="song-stats">
+                                <span>▶ 2.3w</span>
+                                <span>❤ 560</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music2/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">光年之外</h3>
+                            <p class="artist-name">邓紫棋翻唱</p>
+                            <div class="song-stats">
+                                <span>▶ 1.8w</span>
+                                <span>❤ 410</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music3/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">少年</h3>
+                            <p class="artist-name">梦然原创</p>
+                            <div class="song-stats">
+                                <span>▶ 5.1w</span>
+                                <span>❤ 1.2k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music4/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">消愁</h3>
+                            <p class="artist-name">毛不易翻唱</p>
+                            <div class="song-stats">
+                                <span>▶ 3.2w</span>
+                                <span>❤ 890</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music5/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">起风了</h3>
+                            <p class="artist-name">买辣椒也用券</p>
+                            <div class="song-stats">
+                                <span>▶ 4.5w</span>
+                                <span>❤ 1.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/music6/300/300" alt="专辑封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">漠河舞厅</h3>
+                            <p class="artist-name">柳爽原创</p>
+                            <div class="song-stats">
+                                <span>▶ 6.7w</span>
+                                <span>❤ 2.3k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Hot Charts -->
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title">飙升榜单</h2>
+                    <a href="#" class="view-all">查看更多 ></a>
+                </div>
+                <div class="chart-list">
+                    <div class="list-row">
+                        <div class="rank-num top-3">1</div>
+                        <div class="list-info">
+                            <div class="list-title">孤勇者</div>
+                            <div class="list-meta">陈奕迅 · 热门翻唱 · 24小时播放 10w+</div>
+                        </div>
+                        <div class="list-action">
+                            <button class="action-btn">♥</button>
+                            <button class="action-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="list-row">
+                        <div class="rank-num top-3">2</div>
+                        <div class="list-info">
+                            <div class="list-title">乌梅子酱</div>
+                            <div class="list-meta">李荣浩 · 网络流行 · 24小时播放 8w+</div>
+                        </div>
+                        <div class="list-action">
+                            <button class="action-btn">♥</button>
+                            <button class="action-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="list-row">
+                        <div class="rank-num top-3">3</div>
+                        <div class="list-info">
+                            <div class="list-title">这世界那么多人</div>
+                            <div class="list-meta">莫文蔚 · 翻唱金曲 · 24小时播放 6w+</div>
+                        </div>
+                        <div class="list-action">
+                            <button class="action-btn">♥</button>
+                            <button class="action-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="list-row">
+                        <div class="rank-num">4</div>
+                        <div class="list-info">
+                            <div class="list-title">如果不爱</div>
+                            <div class="list-meta">张碧晨 · 原创首发 · 24小时播放 5w+</div>
+                        </div>
+                        <div class="list-action">
+                            <button class="action-btn">♥</button>
+                            <button class="action-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="list-row">
+                        <div class="rank-num">5</div>
+                        <div class="list-info">
+                            <div class="list-title">罗刹海市</div>
+                            <div class="list-meta">刀郎 · 独立音乐 · 24小时播放 4w+</div>
+                        </div>
+                        <div class="list-action">
+                            <button class="action-btn">♥</button>
+                            <button class="action-btn">▶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original Showcase -->
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title">原创推荐</h2>
+                    <a href="#" class="view-all">查看更多 ></a>
+                </div>
+                <div class="grid-row">
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/orig1/300/300" alt="原创封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">梦回大唐</h3>
+                            <p class="artist-name">墨韵轩</p>
+                            <div class="song-stats">
+                                <span>▶ 1.2w</span>
+                                <span>❤ 320</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/orig2/300/300" alt="原创封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">城市灯火</h3>
+                            <p class="artist-name">流浪诗人</p>
+                            <div class="song-stats">
+                                <span>▶ 8900</span>
+                                <span>❤ 210</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="music-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/orig3/300/300" alt="原创封面">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="song-title">雨夜告白</h3>
+                            <p class="artist-name">小迷糊</p>
+                            <div class="song-stats">
+                                <span>▶ 5600</span>
+                                <span>❤ 150</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="notice-box">
+                <div class="notice-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    平台公告
+                </div>
+                <ul class="notice-list">
+                    <li><a href="#">关于打击网络侵权盗版的最新公告</a></li>
+                    <li><a href="#">2023年度原创音乐大赛报名启动</a></li>
+                    <li><a href="#">新版本歌手工具上线通知</a></li>
+                    <li><a href="#">关于规范用户上传内容的规范说明</a></li>
+                </ul>
+            </div>
+
+            <div class="notice-box">
+                <div class="notice-title">热门话题</div>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <span style="background:#f0f2f5; padding:4px 8px; border-radius:4px; font-size:12px; color:#666;">#翻唱挑战赛</span>
+                    <span style="background:#f0f2f5; padding:4px 8px; border-radius:4px; font-size:12px; color:#666;">#古风音乐</span>
+                    <span style="background:#f0f2f5; padding:4px 8px; border-radius:4px; font-size:12px; color:#666;">#原创扶持计划</span>
+                    <span style="background:#f0f2f5; padding:4px 8px; border-radius:4px; font-size:12px; color:#666;">#翻唱技巧分享</span>
+                </div>
+            </div>
+
+            <div class="ad-banner">
+                广告位：音乐推广合作
+            </div>
+
+            <div class="notice-box">
+                <div class="notice-title">音乐人工具箱</div>
+                <ul class="category-list">
+                    <li><a href="#">在线编曲</a></li>
+                    <li><a href="#">歌词创作</a></li>
+                    <li><a href="#">音频剪辑</a></li>
+                    <li><a href="#">版权登记</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于5sing</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">官方QQ群</a></li>
+                    <li><a href="#">网易云音乐</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2005-2023 5sing原创音乐. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
