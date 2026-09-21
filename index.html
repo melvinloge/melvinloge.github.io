@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="歪歪漫画免费观看 - 提供最新、最全的免费漫画在线阅读服务，包含日漫、韩漫、国漫等热门题材，高清画质，无广告干扰，畅快阅读体验。">
+    <meta name="keywords" content="歪歪漫画免费观看,在线漫画,免费漫画,漫画阅读,日漫,韩漫">
+    <title>歪歪漫画免费观看 - 热门漫画在线阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5e62;
+            --primary-hover: #ff9966;
+            --secondary-color: #2b2d42;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #f1f3f5;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 150px;
+            color: var(--text-main);
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background-color: var(--card-bg);
+            border: 1px solid #e5e7eb;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .view-more {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Comic Grid */
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .comic-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .comic-card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        .status-badge {
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f9fafb;
+            font-size: 0.9rem;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: #f3f4f6;
+            color: var(--text-sub);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: #ff5e62; color: white; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #ff9966; color: white; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #ffcc99; color: white; }
+
+        .rank-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Banner Ad Placeholder */
+        .ad-banner {
+            width: 100%;
+            height: 250px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            border: 2px dashed #d1d5db;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #9ca3af;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            font-size: 0.85rem;
+        }
+
+        /* Modal for Reading */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        .modal-body img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .chapter-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+        .chapter-btn {
+            padding: 8px;
+            background-color: #f3f4f6;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .chapter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                🎨 歪歪漫画 <span>免费观看</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">日漫</a>
+                <a href="#">韩漫</a>
+                <a href="#">国漫</a>
+                <a href="#">排行榜</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索漫画...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>畅享免费漫画阅读</h1>
+            <p>海量正版资源，高清画质，更新极速。歪歪漫画免费观看，随时随地开启你的二次元之旅。</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Filters -->
+        <div class="categories">
+            <button class="category-btn active">全部</button>
+            <button class="category-btn">恋爱</button>
+            <button class="category-btn">奇幻</button>
+            <button class="category-btn">热血</button>
+            <button class="category-btn">悬疑</button>
+            <button class="category-btn">搞笑</button>
+            <button class="category-btn">校园</button>
+        </div>
+
+        <!-- Latest Updates -->
+        <section class="section-header">
+            <h2 class="section-title">最新更新</h2>
+            <a href="#" class="view-more">查看更多 &rarr;</a>
+        </section>
+
+        <div class="comic-grid">
+            <!-- Comic Card 1 -->
+            <article class="comic-card" onclick="openModal('我的霸道总裁', '恋爱')">
+                <div class="card-cover">
+                    <span class="card-tag">热门</span>
+                    <img src="https://picsum.photos/seed/comic1/300/450" alt="我的霸道总裁封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">我的霸道总裁</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">连载中</span>
+                        <span>128话</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Comic Card 2 -->
+            <article class="comic-card" onclick="openModal('恶魔王子契约妻', '奇幻')">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/comic2/300/450" alt="恶魔王子契约妻封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">恶魔王子契约妻</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">连载中</span>
+                        <span>95话</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Comic Card 3 -->
+            <article class="comic-card" onclick="openModal('深渊归来', '热血')">
+                <div class="card-cover">
+                    <span class="card-tag">新作</span>
+                    <img src="https://picsum.photos/seed/comic3/300/450" alt="深渊归来封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">深渊归来</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">连载中</span>
+                        <span>12话</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Comic Card 4 -->
+            <article class="comic-card" onclick="openModal('鬼吹灯之精绝古城', '悬疑')">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/comic4/300/450" alt="鬼吹灯之精绝古城封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">鬼吹灯之精绝古城</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">已完结</span>
+                        <span>40话</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Comic Card 5 -->
+            <article class="comic-card" onclick="openModal('天才萌宝：妈咪别跑', '校园')">
+                <div class="card-cover">
+                    <span class="card-tag">催泪</span>
+                    <img src="https://picsum.photos/seed/comic5/300/450" alt="天才萌宝：妈咪别跑封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">天才萌宝：妈咪别跑</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">连载中</span>
+                        <span>200话</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Comic Card 6 -->
+            <article class="comic-card" onclick="openModal('都市修仙传说', '玄幻')">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/comic6/300/450" alt="都市修仙传说封面">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">都市修仙传说</h3>
+                    <div class="card-meta">
+                        <span class="status-badge">连载中</span>
+                        <span>350话</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Main Content + Sidebar -->
+        <div class="main-layout">
+            <!-- Left Content -->
+            <main>
+                <section class="section-header">
+                    <h2 class="section-title">热门推荐</h2>
+                </section>
+
+                <div class="comic-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+                    <!-- More cards -->
+                    <article class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic7/300/450" alt="独家宠爱">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">独家宠爱</h3>
+                            <div class="card-meta">
+                                <span class="status-badge">连载中</span>
+                                <span>45话</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic8/300/450" alt="时光倒流少女">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">时光倒流少女</h3>
+                            <div class="card-meta">
+                                <span class="status-badge">已完结</span>
+                                <span>12话</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic9/300/450" alt="赛博朋克2077">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">赛博朋克2077</h3>
+                            <div class="card-meta">
+                                <span class="status-badge">连载中</span>
+                                <span>8话</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <div class="ad-banner">
+                    广告位：横幅广告区域
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">排行榜</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <span class="rank-title">我的霸道总裁</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <span class="rank-title">恶魔王子契约妻</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <span class="rank-title">天才萌宝：妈咪别跑</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-title">都市修仙传说</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-title">独家宠爱</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">友情链接</h3>
+                    <ul class="rank-list">
+                        <li><a href="#">漫画之家</a></li>
+                        <li><a href="#">快看漫画</a></li>
+                        <li><a href="#">腾讯动漫</a></li>
+                        <li><a href="#">哔哩哔哩漫画</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">歪歪漫画致力于为用户提供免费、流畅、高清的漫画阅读体验。我们精选全球优质漫画资源，涵盖日漫、韩漫、国漫等多个领域。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">日漫专区</a></li>
+                        <li><a href="#">韩漫专区</a></li>
+                        <li><a href="#">排行榜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 歪歪漫画免费观看. All Rights Reserved. 本站资源仅供学习交流使用，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reading Modal -->
+    <div id="readModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="margin-bottom: 10px;">漫画标题</h2>
+            <p id="modalCategory" style="color: var(--text-sub); margin-bottom: 20px;">分类</p>
+            
+            <div class="modal-body">
+                <img src="https://picsum.photos/seed/comic1/800/1200" alt="漫画预览">
+                <p style="margin-top: 10px; color: var(--text-main);">
+                    这里是漫画阅读区域。由于是静态演示页面，实际阅读功能需要接入漫画阅读器组件。本页面展示了歪歪漫画免费观看平台的完整UI结构、导航布局、内容分类以及卡片式设计。
+                </p>
+                <p style="color: var(--text-main);">
+                    点击下方章节按钮可切换章节（演示功能）。
+                </p>
+            </div>
+
+            <h3 style="margin-top: 30px; margin-bottom: 15px;">章节列表</h3>
+            <div class="chapter-list">
+                <button class="chapter-btn">第1话</button>
+                <button class="chapter-btn">第2话</button>
+                <button class="chapter-btn">第3话</button>
+                <button class="chapter-btn">第4话</button>
+                <button class="chapter-btn">第5话</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple Interaction Script
+        function openModal(title, category) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalCategory').textContent = category;
+            document.getElementById('readModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            document.getElementById('readModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('readModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Category Button Logic
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In a real app, this would filter content
+            });
+        });
+    </script>
+</body>
+  </html>
