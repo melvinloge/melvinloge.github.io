@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="浪迪改装 - 专业铃木浪迪越野车底盘升级、动力改装、悬挂系统优化及越野套件定制服务。提供改装案例、配件选购指南及越野技巧分享。">
+    <meta name="keywords" content="浪迪改装,铃木浪迪,越野车改装,底盘升高,越野套件,铃木浪迪配件">
+    <title>浪迪改装 - 专业越野车底盘升级与越野套件定制平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017; /* 黄金越野色 */
+            --primary-hover: #b8860b;
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+            --bg-light: #f4f6f8;
+            --bg-white: #ffffff;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/landy/1920/600.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* 核心优势 */
+        .features {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* 改装案例 */
+        .gallery-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img {
+            height: 220px;
+            width: 100%;
+            background-color: #eee;
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: var(--text-gray);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .gallery-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 改装知识/FAQ */
+        .knowledge-section {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .knowledge-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .knowledge-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .knowledge-content p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .faq-list {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .knowledge-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 产品分类 */
+        .products-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .product-item:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.02);
+        }
+
+        .product-item h4 {
+            margin: 10px 0 5px;
+            font-size: 1rem;
+        }
+
+        .product-item p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .knowledge-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>◆</span> 浪迪改装
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#gallery">改装案例</a></li>
+                    <li><a href="#products">改装配件</a></li>
+                    <li><a href="#knowledge">改装知识</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-cta">免费咨询</a>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>释放越野潜能<br>重塑浪迪驾驶乐趣</h1>
+            <p>专注铃木浪迪底盘升级与动力优化，提供从升高套件到越野轮胎的一站式改装方案，助您征服复杂路况。</p>
+            <a href="#gallery" class="hero-btn">查看改装案例</a>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>专业底盘调校</h3>
+                    <p>针对浪迪原厂悬挂特性，定制升高方案与避震匹配，确保通过性与舒适性的平衡。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>品质原厂配件</h3>
+                    <p>精选正品减震器、大梁加强件及越野轮毂，严格品控，保障行车安全与耐用度。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <h3>精湛焊接工艺</h3>
+                    <p>专业焊工团队，采用激光切割与氩弧焊接技术，确保改装件结构牢固，不漏水不漏油。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏁</div>
+                    <h3>实战改装经验</h3>
+                    <p>十年以上改装经验，熟悉各种复杂路况，为您推荐最适合的改装配置方案。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 改装案例展示 -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>精选改装案例</h2>
+                <p>从轻度升高到硬核越野，每一台浪迪都有其独特的性格。查看我们的成功改造案例。</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- 案例 1 -->
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/landy1/600/400.jpg" alt="铃木浪迪2寸升高改装" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">轻度升高</span>
+                        <h3>城市穿越升级版</h3>
+                        <p>2寸升高套件 + 铝合金轮毂 + 防脱轮圈，兼顾日常通勤与周末郊游。</p>
+                        <a href="#" class="gallery-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <!-- 案例 2 -->
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/landy2/600/400.jpg" alt="铃木浪迪硬核越野改装" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">硬核越野</span>
+                        <h3>全地形征服者</h3>
+                        <p>4寸升高 + 长臂悬挂 + 35寸越野轮胎 + 纵置大梁加固，专为烂路设计。</p>
+                        <a href="#" class="gallery-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <!-- 案例 3 -->
+                <article class="gallery-card">
+                    <img src="https://picsum.photos/seed/landy3/600/400.jpg" alt="铃木浪迪外观改装" class="gallery-img">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">外观升级</span>
+                        <h3>复古露营风</h3>
+                        <p>加装行李架、车顶帐篷、露营灯组及户外电源系统，打造移动露营基地。</p>
+                        <a href="#" class="gallery-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 改装配件分类 -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门改装配件</h2>
+                <p>提供全方位的浪迪改装零部件，满足不同车主的个性化需求。</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div style="font-size: 2rem;">🛞</div>
+                    <h4>越野轮胎</h4>
+                    <p>AT全地形/MT泥地胎</p>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 2rem;">🔧</div>
+                    <h4>减震器套装</h4>
+                    <p>短弹簧/长臂避震/可调阻尼</p>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 2rem;">⚙️</div>
+                    <h4>传动系统</h4>
+                    <p>传动轴/大梁加强/差速锁</p>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 2rem;">🛠️</div>
+                    <h4>维修保养</h4>
+                    <p>机油滤芯/底盘护板/进气系统</p>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 2rem;">🪟</div>
+                    <h4>内饰改装</h4>
+                    <p>全包内饰/卡座/储物箱</p>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 2rem;">💡</div>
+                    <h4>照明升级</h4>
+                    <p>射灯/氛围灯/探照灯</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 改装知识 FAQ -->
+    <section id="knowledge" class="knowledge-section">
+        <div class="container knowledge-container">
+            <div class="knowledge-content">
+                <h2>改装常见问题解答</h2>
+                <p>对于想要改装浪迪的车主来说，了解基本的改装知识和注意事项非常重要。我们整理了最常见的问题供您参考。</p>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">浪迪升高多少寸比较合适？</div>
+                        <div class="faq-answer">
+                            一般建议在2寸到4寸之间。2寸升高适合轻度越野和改善通过性，不影响原厂避震寿命；3-4寸则适合重度越野，但需要更换更长的避震器和重新校准底盘几何。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">改装后油耗会增加多少？</div>
+                        <div class="faq-answer">
+                            升高车身和加装大尺寸轮胎会增加风阻和滚动阻力，通常油耗会增加10%-20%。此外，越野驾驶习惯也会对油耗产生影响。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">改装后年检能通过吗？</div>
+                        <div class="faq-answer">
+                            轻度改装（如升高2寸、更换轮毂）通常可以通过年检，但需确保轮胎规格在原厂允许范围内。重度改装可能需要前往车管所备案或进行外观还原。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="knowledge-image">
+                <img src="https://picsum.photos/seed/workshop/600/400.jpg" alt="专业改装车间">
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部联系 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>浪迪改装</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        专注于铃木浪迪越野车改装服务。我们提供专业的底盘升级、动力优化及外观定制，致力于让每一台浪迪都焕发新生。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">改装案例</a></li>
+                        <li><a href="#">改装配件</a></li>
+                        <li><a href="#">改装流程</a></li>
+                        <li><a href="#">预约咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">底盘升高</a></li>
+                        <li><a href="#">动力改装</a></li>
+                        <li><a href="#">外观喷漆</a></li>
+                        <li><a href="#">电路升级</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-XXX-XXXX</li>
+                        <li>邮箱：service@landy-mod.com</li>
+                        <li>地址：XX市XX区越野车改装产业园A栋</li>
+                        <li>时间：周一至周日 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 浪迪改装服务平台 版权所有. 本站仅用于展示改装案例与技术交流。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
