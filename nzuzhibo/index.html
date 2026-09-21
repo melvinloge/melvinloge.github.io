@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="女足直播提供全球女足赛事实时直播、赛程安排、比分预测及精彩集锦。关注女足世界杯、女足欧冠、女足超级联赛等顶级赛事，一键直达高清直播源。">
+    <meta name="keywords" content="女足直播,女足世界杯,女足欧冠,女足超级联赛,女足赛事,女足比分">
+    <title>女足直播-全球女足赛事实时直播与赛程安排</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d81b60; /* 女足红粉色调 */
+            --primary-hover: #ad1457;
+            --secondary-color: #fce4ec;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-card);
+            height: var(--header-height);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ffebee;
+            color: #d32f2f;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #d32f2f;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .channel-list li {
+            margin-bottom: 10px;
+        }
+
+        .channel-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .channel-list a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .channel-status {
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .status-live {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        .status-offline {
+            background-color: #eee;
+            color: #999;
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Live Now Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .match-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .match-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .match-banner {
+            height: 180px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .live-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(211, 47, 47, 0.9);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .match-info {
+            padding: 15px;
+        }
+
+        .match-league {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .team-logo {
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .team-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .score {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        .match-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px 0;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Schedule Section */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .status-icon {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .status-upcoming { background-color: #4caf50; }
+        .status-live { background-color: #f44336; animation: pulse 1.5s infinite; }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .match-teams {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .score {
+                align-self: center;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                ⚽ 女足<span>直播</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">女足世界杯</a>
+                <a href="#">女足欧冠</a>
+                <a href="#">女足英超</a>
+                <a href="#">女足日联</a>
+                <a href="#">历史回放</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>关注女足，见证荣耀时刻</h1>
+            <p>提供全球顶级女足赛事高清直播，实时比分更新，为您带来最专业的观赛体验。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索赛事、球队或联赛...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-layout">
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门频道</h3>
+                <ul class="channel-list">
+                    <li>
+                        <a href="#">
+                            <span>女足世界杯 2023</span>
+                            <span class="channel-status status-live">直播中</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>女足欧冠 决赛</span>
+                            <span class="channel-status status-offline">即将开始</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>女足英超 周末赛</span>
+                            <span class="channel-status status-offline">已结束</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>女足世界杯 资讯</span>
+                            <span class="channel-status status-offline">已结束</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>女足欧冠 精彩集锦</span>
+                            <span class="channel-status status-offline">已结束</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">赛程日历</h3>
+                <ul class="channel-list">
+                    <li>
+                        <a href="#">
+                            <span>10月24日</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>10月25日</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>10月26日</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            
+            <!-- Live Now Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">正在直播</h2>
+                    <a href="#" style="font-size: 14px; color: var(--primary-color);">查看全部 ></a>
+                </div>
+                
+                <div class="live-grid">
+                    <!-- Match Card 1 -->
+                    <article class="match-card">
+                        <div class="match-banner">
+                            <span class="live-tag"><span class="live-dot"></span> LIVE</span>
+                            <img src="https://picsum.photos/seed/womensoccer1/400/250" alt="女足比赛画面">
+                        </div>
+                        <div class="match-info">
+                            <div class="match-league">女足世界杯 A组 小组赛</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">🇺🇸</div>
+                                    <div class="team-name">美国女足</div>
+                                </div>
+                                <div class="score">2 : 1</div>
+                                <div class="team">
+                                    <div class="team-logo">🇪🇸</div>
+                                    <div class="team-name">西班牙女足</div>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn btn-primary">观看直播</button>
+                                <button class="btn btn-outline">数据统计</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Match Card 2 -->
+                    <article class="match-card">
+                        <div class="match-banner">
+                            <span class="live-tag"><span class="live-dot"></span> LIVE</span>
+                            <img src="https://picsum.photos/seed/womensoccer2/400/250" alt="女足比赛画面">
+                        </div>
+                        <div class="match-info">
+                            <div class="match-league">女足欧冠 1/4 决赛</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">🇬🇧</div>
+                                    <div class="team-name">曼城女足</div>
+                                </div>
+                                <div class="score">0 : 0</div>
+                                <div class="team">
+                                    <div class="team-logo">🇩🇪</div>
+                                    <div class="team-name">拜仁女足</div>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn btn-primary">观看直播</button>
+                                <button class="btn btn-outline">数据统计</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Match Card 3 -->
+                    <article class="match-card">
+                        <div class="match-banner">
+                            <span class="live-tag"><span class="live-dot"></span> LIVE</span>
+                            <img src="https://picsum.photos/seed/womensoccer3/400/250" alt="女足比赛画面">
+                        </div>
+                        <div class="match-info">
+                            <div class="match-league">女足英超 第12轮</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">🇫🇷</div>
+                                    <div class="team-name">里昂女足</div>
+                                </div>
+                                <div class="score">3 : 0</div>
+                                <div class="team">
+                                    <div class="team-logo">🇳🇱</div>
+                                    <div class="team-name">阿贾克斯女足</div>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn btn-primary">观看直播</button>
+                                <button class="btn btn-outline">数据统计</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">近期赛程</h2>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">时间</th>
+                            <th width="25%">赛事</th>
+                            <th width="30%">对阵</th>
+                            <th width="15%">状态</th>
+                            <th width="15%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10月25日 02:45</td>
+                            <td>女足欧冠</td>
+                            <td><strong>巴塞罗那女足</strong> vs <strong>切尔西女足</strong></td>
+                            <td><span class="status-icon status-upcoming"></span>未开始</td>
+                            <td><button class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">预约提醒</button></td>
+                        </tr>
+                        <tr>
+                            <td>10月25日 19:30</td>
+                            <td>女足世界杯</td>
+                            <td><strong>日本女足</strong> vs <strong>德国女足</strong></td>
+                            <td><span class="status-icon status-upcoming"></span>未开始</td>
+                            <td><button class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">预约提醒</button></td>
+                        </tr>
+                        <tr>
+                            <td>10月26日 00:00</td>
+                            <td>女足英超</td>
+                            <td><strong>埃弗顿女足</strong> vs <strong>热刺女足</strong></td>
+                            <td><span class="status-icon status-upcoming"></span>未开始</td>
+                            <td><button class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">预约提醒</button></td>
+                        </tr>
+                        <tr>
+                            <td>10月26日 04:00</td>
+                            <td>女足欧冠</td>
+                            <td><strong>巴黎圣日耳曼女足</strong> vs <strong>沃尔夫斯堡女足</strong></td>
+                            <td><span class="status-icon status-upcoming"></span>未开始</td>
+                            <td><button class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">预约提醒</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- FAQ Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div class="sidebar-card">
+                    <details style="margin-bottom: 15px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: var(--text-main);">如何观看女足直播？</summary>
+                        <p style="margin-top: 10px; color: var(--text-light); font-size: 14px;">您可以直接点击页面上的“观看直播”按钮，进入直播观看页面。部分赛事可能需要注册会员账号才能观看高清画质。</p>
+                    </details>
+                    <details style="margin-bottom: 15px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: var(--text-main);">女足世界杯在哪里举行？</summary>
+                        <p style="margin-top: 10px; color: var(--text-light); font-size: 14px;">2023年女足世界杯在澳大利亚和新西兰联合举办，本届赛事共有32支球队参赛。</p>
+                    </details>
+                    <details style="margin-bottom: 15px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: var(--text-main);">比赛会有延迟吗？</summary>
+                        <p style="margin-top: 10px; color: var(--text-light); font-size: 14px;">直播信号源通常会有几秒钟的延迟，以确保直播的流畅性和稳定性。</p>
+                    </details>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">联系合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门赛事</h4>
+                    <ul>
+                        <li><a href="#">女足世界杯</a></li>
+                        <li><a href="#">女足欧冠联赛</a></li>
+                        <li><a href="#">女足英超联赛</a></li>
+                        <li><a href="#">女足日联联赛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">直播入口</a></li>
+                        <li><a href="#">比赛回放</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 女足直播平台 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
